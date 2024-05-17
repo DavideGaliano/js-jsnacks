@@ -1,5 +1,6 @@
 // Inizializza la variabile per tenere traccia del numero precedente
 let numeroPrecedente = null;
+let programmaTerminato = false;
 
 // Ciclo per un massimo di 1000 iterazioni
 for (let i = 0; i < 1000; i++) {
@@ -18,6 +19,7 @@ for (let i = 0; i < 1000; i++) {
     console.log(
       "Hai inserito lo stesso numero due volte consecutive. Il programma termina."
     );
+    programmaTerminato = true;
     break; // Interrompe il ciclo
   }
 
@@ -25,4 +27,7 @@ for (let i = 0; i < 1000; i++) {
   numeroPrecedente = numeroCorrente;
 }
 
-console.log("Mi sono rotto di aspettare termino il programma.");
+// Controlla se il ciclo è stato completato senza inserire due numeri consecutivi uguali
+if (!programmaTerminato) {
+  console.log("Mi sono rotto di aspettare termino il programma.");
+}
